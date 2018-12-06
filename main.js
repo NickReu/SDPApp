@@ -89,6 +89,37 @@ app.post('/verify', function (req, res) {
 
 });
 
+app.get('/signup', function (req, res) {
+    res.sendFile(path + "login.html")
+    console.log("Here I am in app.get(signup)");
+})
+
+app.post('/signup', function (req, res) {
+    console.log("Hello world Sign up");
+    req.assert("user","user required").notEmpty();
+    req.assert("pass","pass required").notEmpty();
+
+    var username = req.body.user;
+    var pass = req.body.pass
+    console.log("testing signup");
+    
+    var errors = req.validationErrors();
+    console.log(errors);
+    
+    if (!errors) {
+        var query = 'insert into login (login.username, login.hashvalue) values (' + username + ', ' + pass + ')';
+        db.none(query);
+        res.redirect("login.html");
+    }
+    else {
+        req.flash('error', 'Im trying flash');
+        an("Error! Did you put in a username and a password?", "window");
+        res.redirect("login.html");
+    }
+    console.log("ding! the function's done");
+
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}!`))
 
 module.exports = app; 
