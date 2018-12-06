@@ -107,7 +107,7 @@ app.post('/signup', function (req, res) {
     console.log(errors);
     
     if (!errors) {
-        var query = 'insert into login (login.username, login.hashvalue) values (' + username + ', ' + pass + ')';
+        var query = 'insert into login (login.username, login.hashvalue) values (' + "'" + username + "'" + ', ' + "'" + pass + "'" + ')';
         db.none(query);
         res.redirect("login.html");
     }
