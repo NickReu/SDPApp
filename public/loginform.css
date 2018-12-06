@@ -2,6 +2,7 @@
     padding: 15px;
     padding-left: 30px;
     display: inline-block;
+    float: left;
 }
 .login hr {
     opacity: 0.4;
@@ -10,7 +11,7 @@
     font-family: sans-serif;
 }
 .signup {
-    float: right;
+    float: none;
     padding-left: 15px;
     padding-right: 30px;
 }
