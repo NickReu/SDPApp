@@ -46,7 +46,7 @@ function getHash(user) {
             hash = data[0].hashvalue;
             console.log("hash =", hash);
             console.log(hash);
-        });
+    });
     return hash;
 }
 
