@@ -62,15 +62,20 @@ app.post('/verify', function (req, res) {
     var errors = req.validationErrors();
     
     if (!errors) {
-        var hash = getHash(username);
-        final = bcrypt.compareSync(pass, hash);
-        console.log("hash =", hash);
-        if (final){
-            res.redirect("home.html");
-        }
-        else {
-            res.redirect("login.html");
-        }
+        var query = "select login.username, login.hashvalue from login" +
+                    " where login.username = '" + username + "'";
+        db.any(query).then(function (data) {
+            var hash = data[0].hashvalue;
+            console.log("hash function=", hash);
+            final = bcrypt.compareSync(pass, hash);
+            console.log("hash =", hash);
+            if (final){
+                res.redirect("home.html");
+            }
+            else {
+                res.redirect("login.html");
+            }
+        });
     }
     else {
         req.flash('error', 'Im trying flash');
