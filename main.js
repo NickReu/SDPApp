@@ -44,7 +44,7 @@ function getHash(user) {
                 " where login.username = '" + user + "'";
     db.any(query).then(function (data) {
             hash = data[0].hashvalue;
-            console.log("hash =", hash);
+            console.log("hash function=", hash);
             console.log(hash);
         });
     return hash;
