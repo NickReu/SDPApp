@@ -59,7 +59,6 @@ app.post('/verify', function (req, res) {
     console.log("test");
     
     var errors = req.validationErrors();
-    console.log(errors);
     
     if (!errors) {
         var hash = getHash(username);
