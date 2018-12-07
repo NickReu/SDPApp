@@ -56,7 +56,7 @@ app.post('/verify', function (req, res) {
     req.assert("pass","pass required").notEmpty();
 
     var username = req.body.user;
-    var pass = req.body.pass
+    var pass = req.body.pass;
     console.log("test");
     
     var errors = req.validationErrors();
