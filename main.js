@@ -61,7 +61,7 @@ app.post('/verify', function (req, res) {
     var errors = req.validationErrors();
     
     if (!errors) {
-        var hash = getHash(user);
+        var hash = getHash(username);
         final = bcrypt.compareSync(pass, hash);
         console.log("hash");
         console.log(hash);
