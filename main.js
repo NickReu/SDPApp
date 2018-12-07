@@ -40,7 +40,7 @@ app.get('/verify', function (req, res) {
 
 function getHash(user) {
     var hash = '';
-    var query = "select login.username, login.salt from login" +
+    var query = "select login.username, login.hashvalue from login" +
                 " where login.username = '" + user + "'";
     db.any(query).then(function (data) {
             hash = data[0].hashvalue;
