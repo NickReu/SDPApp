@@ -75,6 +75,9 @@ app.post('/verify', function (req, res) {
             else {
                 res.redirect("login.html");
             }
+        })
+        .catch(function () {
+            res.redirect("login.html");
         });
     }
     else {
