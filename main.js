@@ -123,7 +123,7 @@ app.post('/signup', function (req, res) {
         req.flash('error', 'Im trying flash');
         an("Error! Did you put in a username and a password?", "window");
         res.redirect("login.html");
-    }
+    } 
     console.log("ding! the function's done");
 	
 });
