@@ -46,7 +46,7 @@ function getHash(user) {
             hash = data[0].hashvalue;
             console.log(hash);
         });
-    return salt;
+    return hash;
 }
 
 app.post('/verify', function (req, res) {
