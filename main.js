@@ -72,7 +72,6 @@ app.post('/verify', function (req, res) {
         else {
             res.redirect("login.html");
         }
-        })
     }
     else {
         req.flash('error', 'Im trying flash');
