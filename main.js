@@ -38,13 +38,13 @@ app.get('/verify', function (req, res) {
     console.log("Here I am in app.get(verify)");
 })
 
-function getSalt(user) {
-    var salt = '';
+function getHash(user) {
+    var hash = '';
     var query = "select login.username, login.salt from login" +
                 " where login.username = '" + user + "'";
     db.any(query).then(function (data) {
-            salt = data[0].salt;
-            console.log(salt);
+            hash = data[0].hashvalue;
+            console.log(hash);
         });
     return salt;
 }
@@ -62,22 +62,16 @@ app.post('/verify', function (req, res) {
     console.log(errors);
     
     if (!errors) {
-        var salt = getSalt(username);
-        console.log("salt");
-        console.log(salt);
-        var hash = bcrypt.hashSync(pass,salt);
+        var hash = getHash(user);
+        final = bcrypt.compareSync(pass, hash);
         console.log("hash");
         console.log(hash);
-        db.func('checkuser', [username, hash])
-            .then( data => {
-                var temp = data[0];
-                var final = temp.checkuser;
-                if (final == true){
-                    res.redirect("home.html");
-                }
-                else {
-                    res.redirect("login.html");
-                }
+        if (final){
+            res.redirect("home.html");
+        }
+        else {
+            res.redirect("login.html");
+        }
         })
     }
     else {
@@ -100,14 +94,15 @@ app.post('/signup', function (req, res) {
     req.assert("pass","pass required").notEmpty();
 
     var username = req.body.user;
-    var pass = req.body.pass
+    var pass = req.body.pass;
+    var hash = bcrypt.hashSync(pass,11);
     console.log("testing signup");
     
     var errors = req.validationErrors();
     console.log(errors);
     
     if (!errors) {
-        var query = 'insert into login (username, hashvalue) values (' + "'" + username + "'" + ', ' + "'" + pass + "'" + ')';
+        var query = 'insert into login (username, hashvalue) values (' + "'" + username + "'" + ', ' + "'" + hash + "'" + ')';
         db.none(query);
         res.redirect("login.html");
     }
