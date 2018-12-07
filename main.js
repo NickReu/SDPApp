@@ -44,6 +44,7 @@ function getHash(user) {
                 " where login.username = '" + user + "'";
     db.any(query).then(function (data) {
             hash = data[0].hashvalue;
+            console.log("hash =", hash);
             console.log(hash);
         });
     return hash;
@@ -63,8 +64,7 @@ app.post('/verify', function (req, res) {
     if (!errors) {
         var hash = getHash(username);
         final = bcrypt.compareSync(pass, hash);
-        console.log("hash");
-        console.log(hash);
+        console.log("hash =", hash);
         if (final){
             res.redirect("home.html");
         }
