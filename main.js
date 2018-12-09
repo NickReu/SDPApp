@@ -71,6 +71,7 @@ app.post('/verify', function (req, res) {
             console.log("hash =", hash);
             if (final){
                 req.sess.user = username;
+                console.log(req.sess.user);
                 res.redirect("home.html");
             }
             else {
