@@ -65,6 +65,9 @@ body {
     text-decoration: none;
     color: white;
 }
+.form{
+    float: right;
+}
 .logout {
     position: relative;
     float: right;
