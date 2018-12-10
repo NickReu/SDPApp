@@ -71,7 +71,7 @@ app.post('/verify', function (req, res) {
             console.log("hash =", hash);
             if (final){
                 req.session.user = username;
-                res.redirect("home.html");
+                res.redirect("home_logout.html");
             }
             else {
                 res.redirect("login.html");

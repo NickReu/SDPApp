@@ -67,9 +67,10 @@ body {
 }
 .form{
     float: right;
+    padding-right: 50px;
 }
 .table{
-    float: left;
+    float: right;
 }
 .logout {
     position: relative;
