@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var an = require("alert-node");
 const bcrypt = require("bcrypt");
-var cookie = require('cookie');
 
 const app = express();
 app.use(bodyParser.json());
@@ -87,12 +86,6 @@ app.post('/verify', function (req, res) {
         an("Error! Did you put in a username and a password?", "window");
         res.redirect("login.html");
     }
-
-    res.setHeader('Set-Cookie', cookie.serialize('name', 'kyle', {
-      httpOnly: true,
-      maxAge: 60 * 60 * 24 * 7 // 1 week
-    }));
-
     console.log("ding! the function's done");
 
 });
@@ -129,9 +122,9 @@ app.post('/signup', function (req, res) {
         req.flash('error', 'Im trying flash');
         an("Error! Did you put in a username and a password?", "window");
         res.redirect("login.html");
-    } 
+    }
     console.log("ding! the function's done");
-	
+
 });
 
 app.get('/button', function (req, res) {
