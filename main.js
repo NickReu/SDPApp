@@ -70,8 +70,8 @@ app.post('/verify', function (req, res) {
             final = bcrypt.compareSync(pass, hash);
             console.log("hash =", hash);
             if (final){
-                //req.sess.user = username;
-                //console.log(req.sess.user);
+                req.sess.user = "kyle";
+                console.log(req.sess.user);
                 res.redirect("home.html");
             }
             else {
