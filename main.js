@@ -18,7 +18,7 @@ app.use(sess({
     secret: 'notMonday',
     resave: false,
     saveUninitialized: true,
-    cookie: {maxAge: 60000}
+    cookie: {maxAge: 24*60*60000}
 }));
 //app.use(sess());
 app.use(exp_val());
