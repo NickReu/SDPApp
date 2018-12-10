@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('./database.js');
 const flash = require("express-flash");
-const sess = require("express-session");
+var sess = require("express-session");
 var exp_val = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -19,9 +19,9 @@ app.use(sess({
     secret: 'notMonday',
     resave: false,
     saveUninitialized: true,
-    cookie: {maxAge: 60000}
+    cookie: {maxAge: 24*60*60000}
 }));
-app.use(sess());
+//app.use(sess());
 app.use(exp_val());
 app.use(flash());
 
@@ -71,7 +71,8 @@ app.post('/verify', function (req, res) {
             final = bcrypt.compareSync(pass, hash);
             console.log("hash =", hash);
             if (final){
-                res.redirect("home.html");
+                req.session.user = username;
+                res.redirect("home_logout.html");
             }
             else {
                 res.redirect("login.html");
@@ -94,6 +95,11 @@ app.post('/verify', function (req, res) {
 
     console.log("ding! the function's done");
 
+});
+
+app.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.redirect("home.html");
 });
 
 app.get('/signup', function (req, res) {
@@ -126,6 +132,15 @@ app.post('/signup', function (req, res) {
     } 
     console.log("ding! the function's done");
 	
+});
+
+app.get('/button', function (req, res) {
+    if(!req.session.user){
+        res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    }
+    else{
+        res.redirect("home_logout.html");
+    }
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))

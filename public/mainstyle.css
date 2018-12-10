@@ -65,6 +65,30 @@ body {
     text-decoration: none;
     color: white;
 }
+.form{
+    float: right;
+    padding-right: 50px;
+}
+.table{
+    float: right;
+}
+.logout {
+    position: relative;
+    float: right;
+    background-color: #356080; 
+    border: 3px solid white;
+    height: 40px;
+    width: 100px;
+    font-size: 80%;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);
+}
+.logout:hover {
+    background-color: #4580a0; 
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.3);
+}
 .button_container {
     margin-top: 6%;
     width: 60%;
