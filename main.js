@@ -132,7 +132,7 @@ app.get('/button', function (req, res) {
         res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
     else{
-        res.redirect("home.html");
+        res.redirect("home_logout.html");
     }
 });
 
