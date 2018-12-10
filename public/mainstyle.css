@@ -65,6 +65,20 @@ body {
     text-decoration: none;
     color: white;
 }
+.top_menu table tr td p form button{
+    text-decoration: none;
+    color: white;
+}
+.top_menu table tr td p form button:hover {
+    text-shadow: 0px 0px 2px white;
+    text-decoration: none;
+    color: white;
+}
+.top_menu table tr td p form button:active {
+    text-shadow: 0px 0px 5px white;
+    text-decoration: none;
+    color: white;
+}
 .button_container {
     margin-top: 6%;
     width: 60%;
