@@ -66,12 +66,11 @@ body {
     color: white;
 }
 .logout {
-    margin-top: 20px;
     position: relative;
     background-color: #356080; 
     border: 3px solid white;
-    height: 50px;
-    width: 90px;
+    height: 40px;
+    width: 70px;
     font-size: 1em;
     font-weight: bold;
     color: white;
@@ -79,7 +78,7 @@ body {
 }
 .logout:hover {
     background-color: #4580a0; 
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.3);
 }
 .button_container {
     margin-top: 6%;
