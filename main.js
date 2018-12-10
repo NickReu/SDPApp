@@ -129,7 +129,10 @@ app.post('/signup', function (req, res) {
 
 app.get('/button', function (req, res) {
     if(!req.session.user){
-        //res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    }
+    else{
+        //res.redirect("home_logout.html");
         var ran = Math.floor((Math.random()*3230) + 1);
         var query = "select id, memeurl from memes where id = '" + ran + "'";
         db.any(query).then(function(data){
@@ -141,9 +144,6 @@ app.get('/button', function (req, res) {
         .catch(function(error){
 
         })
-    }
-    else{
-        res.redirect("home_logout.html");
     }
 });
 
