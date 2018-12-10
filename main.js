@@ -20,7 +20,7 @@ app.use(sess({
     saveUninitialized: true,
     cookie: {maxAge: 60000}
 }));
-app.use(sess());
+//app.use(sess());
 app.use(exp_val());
 app.use(flash());
 
@@ -70,7 +70,7 @@ app.post('/verify', function (req, res) {
             final = bcrypt.compareSync(pass, hash);
             console.log("hash =", hash);
             if (final){
-                req.sess.user = "kyle";
+                req.session.user = username;
                 console.log(req.sess.user);
                 res.redirect("home.html");
             }
