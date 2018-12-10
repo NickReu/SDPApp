@@ -67,6 +67,7 @@ body {
 }
 .logout {
     position: relative;
+    float: left;
     background-color: #356080; 
     border: 3px solid white;
     height: 40px;
