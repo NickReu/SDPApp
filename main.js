@@ -127,7 +127,7 @@ app.post('/signup', function (req, res) {
 
 });
 
-app.get('/button' function (req, res) {
+app.get('/button', function (req, res) {
     res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 });
 
