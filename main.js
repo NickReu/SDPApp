@@ -71,7 +71,7 @@ app.post('/verify', function (req, res) {
             console.log("hash =", hash);
             if (final){
                 req.session.user = username;
-                res.redirect("home_logout.html");
+                res.redirect("home.html");
             }
             else {
                 res.redirect("login.html");
@@ -128,7 +128,12 @@ app.post('/signup', function (req, res) {
 });
 
 app.get('/button', function (req, res) {
-    res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    if(!req.session.user){
+        res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    }
+    else{
+        res.redirect("home.html");
+    }
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
