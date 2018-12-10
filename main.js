@@ -90,6 +90,11 @@ app.post('/verify', function (req, res) {
 
 });
 
+app.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.redirect("home.html");
+});
+
 app.get('/signup', function (req, res) {
     res.sendFile(path + "login.html")
     console.log("Here I am in app.get(signup)");
