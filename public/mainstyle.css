@@ -68,6 +68,9 @@ body {
 .form{
     float: right;
 }
+.table{
+    float: left;
+}
 .logout {
     position: relative;
     float: right;
