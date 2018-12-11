@@ -4,7 +4,7 @@ This web app is simply a meme generator. Once you create an account, you will ha
 
 ## Use
 
-Simply visit [notmonday.herokuapp](notmonday.herokuapp.com) and create an account to get started, and prepare to start LOL and ROFL.
+Simply visit [notmonday.herokuapp](https://notmonday.herokuapp.com/) and create an account to get started, and prepare to start LOL and ROFL.
 
 ### About
 
