@@ -23,3 +23,7 @@ The remaining files in the main folder contains all the code to initialize the w
 3. Load the urls of the memes you would like to see generated, Kaggle.com is a great dataset website that constinas huge lists of memes.
 4. Navigate into the folder where the repo is cloned, sign in into Heroku, git init, and now you can start testing. You can push to the git repo and the Heroku CLI by these following commands, git add . , git commit -am "your commit" ,  git push heroku master.
 5. You can now refresh the page 'your heroku app name'.herokuapp.com and review your changes.
+
+### CI System Link
+
+[NotMonday Travis CI Link](https://travis-ci.org/mformanek/SDPApp)
