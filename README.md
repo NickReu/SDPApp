@@ -7,3 +7,6 @@ This web app is simply a meme generator. Once you create an account, you will ha
 Simply visit [notmonday.herokuapp](notmonday.herokuapp.com) and create an account to get started, and prepare to start LOL and ROFL.
 
 ### About
+
+This app was developed by Not Monday, a software development team at CU Boulder's CSCI 3308-Software Developement Methods and Tools Course which consists of memebers Nicholas Auer, Chandler de Spirlet, Josh Meyer, Milan Formanek, Owen Loeb, and Kyle Murphy. 
+
