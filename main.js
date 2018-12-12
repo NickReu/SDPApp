@@ -149,6 +149,29 @@ app.get('/button', function (req, res) {
     }
 });
 
+
+app.get('/buttonX', function (req, res) {
+    if(!req.session.user){
+        res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    }
+    else{
+        //res.redirect("home_logout.html");
+        var ran = Math.floor((Math.random()*3230) + 1);//For original table
+        //var ran = Math.floor((Math.random() * 34) + 1);
+        var query = "select id, memeurl from memes where id = '" + ran + "'";
+        console.log('query =', query);
+        db.any(query).then(function(data){
+            console.log("data =", data);
+            console.log("url =", data[0].memeurl);
+            var url = data[0].memeurl;
+            res.redirect(url);
+        })
+        .catch(function(error){
+
+        })
+    }
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}!`))
 
 module.exports = app; 
