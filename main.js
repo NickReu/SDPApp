@@ -134,11 +134,12 @@ app.get('/button', function (req, res) {
     else{
         //res.redirect("home_logout.html");
         var ran = Math.floor((Math.random()*3230) + 1);
-        var query = "select id, memeurl from memes where id = '" + ran + "'";
+        var query = "select id, appromemes from memes where id = '" + ran + "'";
         db.any(query).then(function(data){
             console.log("data =", data);
             console.log("url =", data[0].memeurl);
             var url = data[0].memeurl;
+            window.open(url);
             res.redirect(url);
         })
         .catch(function(error){
