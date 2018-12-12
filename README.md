@@ -20,8 +20,8 @@ The remaining files in the main folder contains all the code to initialize the w
 
 1. If you dont already have a Heroku App setup, visit Heroku.com and link a copy of this repository to the app that you have created. Also fork and clone this repo onto your own machine. 
 2. Set up a postgres database within Heroku, and connect to it using PGAdmin using all the credentials provided on the Heroku site, then load all the tables used in the main.js file with the correct table names and attributes.
-3. Load the urls of the memes you would like to see generated, Kaggle.com is a great dataset website that constinas huge lists of memes.
-4. Navigate into the folder where the repo is cloned, sign in into Heroku, git init, and now you can start testing. You can push to the git repo and the Heroku CLI by these following commands, git add . , git commit -am "your commit" ,  git push heroku master.
+3. Load the urls of the memes you would like to see generated, Kaggle.com is a great dataset website that constains huge lists of memes.
+4. Navigate into the folder where the repo is cloned, download the Heroku CLI, sign in into Heroku, git init, and now you can start testing. You can push to the git repo and the Heroku CLI by these following commands, git add . , git commit -am "your commit" ,  git push heroku master.
 5. You can now refresh the page 'your heroku app name'.herokuapp.com and review your changes.
 
 ### CI System Link
