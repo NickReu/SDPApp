@@ -134,7 +134,7 @@ app.get('/button', function (req, res) {
     else{
         //res.redirect("home_logout.html");
         //var ran = Math.floor((Math.random()*3230) + 1);//For original table
-        var ran = Math.floor((Math.random() * 32) + 1);
+        var ran = Math.floor((Math.random() * 34) + 1);
         var query = "select id, appromemes from memes where id = '" + ran + "'";
         db.any(query).then(function(data){
             console.log("data =", data);
