@@ -139,7 +139,6 @@ app.get('/button', function (req, res) {
             console.log("data =", data);
             console.log("url =", data[0].memeurl);
             var url = data[0].memeurl;
-            window.open(url);
             res.redirect(url);
         })
         .catch(function(error){
