@@ -133,9 +133,10 @@ app.get('/button', function (req, res) {
     }
     else{
         //res.redirect("home_logout.html");
-        //var ran = Math.floor((Math.random()*3230) + 1);//For original table
-        var ran = Math.floor((Math.random() * 34) + 1);
-        var query = "select id, appromemes from memes where id = '" + ran + "'";
+        var ran = Math.floor((Math.random()*3230) + 1);//For original table
+        //var ran = Math.floor((Math.random() * 34) + 1);
+        var query = "select id, memes from memes where id = '" + ran + "'";
+        console.log('query =', query);
         db.any(query).then(function(data){
             console.log("data =", data);
             console.log("url =", data[0].memeurl);
