@@ -152,7 +152,7 @@ app.get('/button', function (req, res) {
 
 app.get('/buttonX', function (req, res) {
     if(!req.session.user){
-        res.redirect("https://www.youtube.com/embed/dQw4w9WgXcQ");
+        res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
     else{
         //res.redirect("home_logout.html");
