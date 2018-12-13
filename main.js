@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var an = require("alert-node");
 const bcrypt = require("bcrypt");
-var cookie = require('cookie');
 
 const app = express();
 app.use(bodyParser.json());
@@ -87,12 +86,6 @@ app.post('/verify', function (req, res) {
         an("Error! Did you put in a username and a password?", "window");
         res.redirect("login.html");
     }
-
-    res.setHeader('Set-Cookie', cookie.serialize('name', 'kyle', {
-      httpOnly: true,
-      maxAge: 60 * 60 * 24 * 7 // 1 week
-    }));
-
     console.log("ding! the function's done");
 
 });
@@ -129,9 +122,9 @@ app.post('/signup', function (req, res) {
         req.flash('error', 'Im trying flash');
         an("Error! Did you put in a username and a password?", "window");
         res.redirect("login.html");
-    } 
+    }
     console.log("ding! the function's done");
-	
+
 });
 
 app.get('/button', function (req, res) {
@@ -139,7 +132,43 @@ app.get('/button', function (req, res) {
         res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
     else{
-        res.redirect("home_logout.html");
+        //res.redirect("home_logout.html");
+        //var ran = Math.floor((Math.random()*3230) + 1);//For original table
+        var ran = Math.floor((Math.random() * 34) + 1);
+        var query = "select id, memeurl from appromemes where id = '" + ran + "'";
+        console.log('query =', query);
+        db.any(query).then(function(data){
+            console.log("data =", data);
+            console.log("url =", data[0].memeurl);
+            var url = data[0].memeurl;
+            res.redirect(url);
+        })
+        .catch(function(error){
+
+        })
+    }
+});
+
+
+app.get('/buttonX', function (req, res) {
+    if(!req.session.user){
+        res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    }
+    else{
+        //res.redirect("home_logout.html");
+        var ran = Math.floor((Math.random()*3230) + 1);//For original table
+        //var ran = Math.floor((Math.random() * 34) + 1);
+        var query = "select id, memeurl from memes where id = '" + ran + "'";
+        console.log('query =', query);
+        db.any(query).then(function(data){
+            console.log("data =", data);
+            console.log("url =", data[0].memeurl);
+            var url = data[0].memeurl;
+            res.redirect(url);
+        })
+        .catch(function(error){
+
+        })
     }
 });
 
