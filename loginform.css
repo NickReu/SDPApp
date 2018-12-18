@@ -1,19 +1,11 @@
 .login {
-    padding: 15px;
-    padding-left: 30px;
-    display: inline-block;
-    float: left;
+    padding: 10px;
 }
 .login hr {
     opacity: 0.4;
 }
 .login h1 {
     font-family: sans-serif;
-}
-.signup {
-    float: none;
-    padding-left: 15px;
-    padding-right: 30px;
 }
 .formlabel {
     position: relative;
@@ -26,7 +18,7 @@
     background-color: #356080; 
     border: 3px solid white;
     height: 50px;
-    width: 90px;
+    width: 80px;
     font-size: 1em;
     font-weight: bold;
     color: white;
