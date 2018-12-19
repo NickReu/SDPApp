@@ -4,6 +4,7 @@
 	<title>Generator Mockup</title>
     <link type="text/css" rel="stylesheet" href="mainstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+    <link rel="icon" type="image/png" href="nm16x16.png"/>
 </head>
 
 <body>
@@ -12,7 +13,7 @@
             <table>
                 <tr>
                     <td>
-                        <p type="image/svg+xml" data="nmlogowhite.svg" class="logo no_select">
+                        <p class="logo no_select">
                             nm
                         </p>
                     </td>
@@ -23,7 +24,7 @@
                         <a href="login.html">Log In</a>
                     </p> </td>
                     <td> <p>
-                        <a href="#">About</a>
+                        <a href="about.html#">About</a>
                     </p> </td>
                 </tr>
             </table>
@@ -32,10 +33,25 @@
         </div>
     </div>
     <div class="button_container">
-        <button class="button button_text no_select">
-            Generate!
-        </button>
+        <form action="/button" method="GET">
+            <button class="button button_text no_select">
+                Generate!
+            </button>
+        </form>
     </div>
+
+    <div class="button_containerX">
+        <form action="/buttonX" method="GET">
+            <button class="button button_textX no_select">
+                !Caution!
+            </button>
+        </form>
+    </div>
+	
+    <div class="login_advice" style="color:red; text-align:center; margin-left:auto: margin-right:auto;">
+	    <p>Must be logged in to view the Fire Memes!</p> 
+    </div>
+    
     <div class="page_content">
         <div>
             <p>

@@ -1,4 +1,9 @@
 <!DOCTYPE html xml:lang="en" lang="en">
+<script>
+if (messages.error) { 
+    <p style="color:red">messages.error</p>
+}
+</script>
 
 <head>
 	<title>Generator Mockup</title>
@@ -13,7 +18,7 @@
             <table>
                 <tr>
                     <td>
-                        <p type="image/svg+xml" data="nmlogowhite.svg" class="logo no_select">
+                        <p class="logo no_select">
                             nm
                         </p>
                     </td>
@@ -24,7 +29,7 @@
                         <a href="#">Log In</a>
                     </p> </td>
                     <td> <p>
-                        <a href="#">About</a>
+                        <a href="about.html#">About</a>
                     </p> </td>
                 </tr>
             </table>
@@ -33,7 +38,7 @@
         </div>
     </div>
     <div class="page_content">
-        <form action="#" class="login">
+        <form action="/verify" method="POST" class="login">
             <p>
                 <h1>
                 Log in
@@ -43,13 +48,31 @@
             <p class="formlabel">
                 Username
             </p>
-            <input type="text">
+            <input type="text" name="user" id ="user" >
             <p class="formlabel">
                 Password
             </p>
-            <input type="password">
+            <input type="password" name="pass" id="pass" >
             <br>
             <input type="submit" value="Log in" class="submit">
+        </form>
+        <form action="/signup" method="POST" class="login signup">
+            <p>
+                <h1>
+                or Sign Up
+                </h1>
+            </p>
+            <hr/>
+            <p class="formlabel">
+                Username
+            </p>
+            <input type="text" name="user" id ="user" >
+            <p class="formlabel">
+                Password
+            </p>
+            <input type="password" name="pass" id="pass" >
+            <br>
+            <input type="submit" value="Sign up" class="submit">
         </form>
     </div>
 </body>
